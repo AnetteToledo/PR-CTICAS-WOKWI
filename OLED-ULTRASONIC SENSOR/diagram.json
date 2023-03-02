@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "author": "Anette Toledo",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -31.33,
+      "left": 112.67,
+      "attrs": { "env": "micropython-20220618-v1.19.1" }
+    },
+    { "type": "board-ssd1306", "id": "oled1", "top": -37.51, "left": -91.37, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": 123.5, "left": -138.77, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "oled1:GND", "esp:GND.2", "black", [ "v-41.22", "h109.7", "v200.67" ] ],
+    [ "oled1:VCC", "esp:VIN", "red", [ "v-32.55", "h89.58", "v200.67" ] ],
+    [ "oled1:SCL", "esp:D13", "purple", [ "v-21.89", "h67.47", "v161.11" ] ],
+    [ "oled1:SDA", "esp:D12", "orange", [ "v-14.55", "h48.3", "v144.67" ] ],
+    [ "ultrasonic1:GND", "esp:GND.1", "black", [ "v9.73", "h281.97", "v-107.33" ] ],
+    [ "ultrasonic1:VCC", "esp:3V3", "red", [ "v31.73", "h323.97", "v-120" ] ],
+    [ "ultrasonic1:TRIG", "esp:D22", "violet", [ "v17.07", "h293.72", "v-237.62" ] ],
+    [ "ultrasonic1:ECHO", "esp:D21", "yellow", [ "v47.41", "h315.06", "v-228.92" ] ]
+  ],
+  "dependencies": {}
+}

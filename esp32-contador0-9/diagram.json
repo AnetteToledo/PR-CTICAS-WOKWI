@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "author": "Anette Toledo",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -23.34,
+      "left": 16.67,
+      "attrs": { "env": "micropython-20220618-v1.19.1" }
+    },
+    { "type": "wokwi-7segment", "id": "sevseg1", "top": 18.71, "left": -119.92, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 259.49,
+      "left": -31.19,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 256.71,
+      "left": 96.09,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "sevseg1:A", "esp:D13", "green", [ "v-40.36", "h67.48", "v134.03" ] ],
+    [ "sevseg1:B", "esp:D12", "green", [ "v-29.42", "h43.29", "v85.12" ] ],
+    [ "sevseg1:D", "esp:D2", "green", [ "v112.31", "h263.01", "v-93.64" ] ],
+    [ "sevseg1:E", "esp:D4", "green", [ "v95.9", "h293.28", "v-93.64" ] ],
+    [ "sevseg1:F", "esp:D5", "green", [ "v-56.17", "h272.13", "v98.5" ] ],
+    [ "sevseg1:G", "esp:D18", "green", [ "v-73.8", "h293.89", "v102.76" ] ],
+    [ "sevseg1:DP", "esp:D26", "green", [ "v46.04", "h70.04", "v-72.35" ] ],
+    [ "esp:D25", "btn1:1.l", "green", [ "h-77.67", "v191.04" ] ],
+    [ "btn1:2.l", "esp:GND.2", "black", [ "h-41.5", "v-165.83" ] ],
+    [ "btn2:1.l", "esp:D19", "green", [ "h-30.38", "v-38.53", "h82.77", "v-182.32" ] ],
+    [ "esp:GND.2", "btn2:2.l", "black", [ "h-20.64", "v121.51", "h73.03", "v48.68" ] ],
+    [ "sevseg1:C", "esp:D14", "green", [ "v0" ] ],
+    [ "esp:VIN", "sevseg1:COM.1", "red", [ "h-13.81", "v18.12", "h-96.31" ] ]
+  ],
+  "dependencies": {}
+}
